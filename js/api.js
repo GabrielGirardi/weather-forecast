@@ -1,5 +1,5 @@
 $(document).ready(function(){
-   const location = 'http://api.openweathermap.org/geo/1.0/reverse?lat=-27.21&lon=-49.64&appid=c0694e269150453d93928541a7fbaf03';
+   const location = 'https://api.openweathermap.org/geo/1.0/reverse?lat=-27.21&lon=-49.64&appid=c0694e269150453d93928541a7fbaf03';
    const apiKey = 'c0694e269150453d93928541a7fbaf03';
 
    const city = $('.city');
