@@ -8,6 +8,8 @@ $(document).ready(function(){
    const desc = $('.description');
    const max = $('.max');
    const min = $('.min');
+   let iconWeather = $('.icon-weather');
+   let wallpaper = $('body');
 
    // const url = 'api.openweathermap.org/data/2.5/forecast/daily?lat=-27.2145&lon=-49.6435&cnt=10&appid=c0694e269150453d93928541a7fbaf03';
 
@@ -32,6 +34,7 @@ $(document).ready(function(){
            let cityTempDesc = content.weather[0].description;
            let tempMax = content.main.temp_max;
            let tempMin = content.main.temp_min;
+           let icon = content.weather[0].icon;
 
            $(city).html(cityName);
            $(country).html(cityCountry);
@@ -39,7 +42,17 @@ $(document).ready(function(){
            $(desc).html(cityTempDesc);
            $(max).html(`Máx ${tempMax}`);
            $(min).html(`Min ${tempMin}`);
+           $(iconWeather).attr('src', `http://openweathermap.org/img/w/${icon}.png`);
 
+            const weatherConditions = {
+                'nublado': './assets/image/cloudy.gif',
+                'chuva': './assets/image/rain.gif',
+                'céu limpo': './assets/image/sun.gif',
+                'tempestade': './assets/image/thunder.gif'
+              };
+              
+              $(wallpaper).css('background-image', `url(${weatherConditions[cityTempDesc]})`);
+        
 
          });
      });
