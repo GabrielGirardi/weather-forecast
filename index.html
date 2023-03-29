@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Weather Forecast</title>
-    <link rel="icon" href="">
-    <link rel="stylesheet" type="text/css" href="./css/landing-page.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./js/api.js"></script>
-  </head>
-  <body>
-     <header>
-
-     </header>
-     <section>
-        <div class="weather-widget">
-            <div class="location">
-                <h2 class="city">Cidade</h2>
-                <p class="country">País</p>
-        </div>
-        <div class="temperature">
-            <h1 class="temp">--°C</h1>
-            <p class="description">Descrição do tempo</p>
-            <div>
-              <img class="icon-weather" src="" alt="Condição Temporal" title="Condição Temporal"/>
-            </div>
-        </div>
-    </div>
-
-     </section>
-  </body>
+  	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Weather Forecast</title>
+		<link rel="icon" href="">
+		<link rel="stylesheet" type="text/css" href="./css/landing-page.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="./js/api.js"></script>
+		<script src="./js/time.js"></script>
+		<script src="./js/main.js"></script>
+  	</head>
+	<body>
+		<header>
+		
+		</header>
+		<section>
+			<div class="weather-widget">
+				<div class="location">
+					<h2 class="city">Cidade</h2>
+					<p class="country">País</p>
+				</div>
+				<div class="temperature">
+					<h1 class="temp">--°C</h1>
+					<p class="description">Descrição do tempo</p>
+					<div>
+						<img class="icon-weather" src="" alt="Condição Temporal" title="Condição Temporal" width="64" height="64"/>
+					</div>
+				</div>
+			</div>
+			<div class="weather-locations">
+				<div class="date-and-time">
+					<span class="time"></span>
+					<span class="separator">-</span>
+					<span class="date"></span>
+				</div>
+				<div class="more-info">
+					<div class="button-more">+</div>
+					<div class="extra-content">
+						<div>
+							<input type="search" class="search" placeholder="Pesquisar cidade" />
+							<button class="search-button">🔎</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+  	</body>
 </html>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -10,7 +12,11 @@ body {
     align-items: center;
     height: 100%;
     width: 100%;
+    min-height: 100vh;
     background-image: url(../assets/image/default.gif);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    font-family: 'Poppins', sans-serif;
 
     section {
         display: flex;
@@ -27,14 +33,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    background-color: #000000c6;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 600px;
+    border-radius: 10px 0 0 10px; 
+    width: 660px;
     height: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: none;
+    color: #fff;
 
     .location {
         text-align: center;
@@ -42,21 +48,25 @@ body {
 
         .city {
             font-size: 2em;
+            font-weight: 300;
             margin: 0;
         }
 
     .country {
             font-size: 1.2em;
             margin: 0;
+            font-weight: 100;
         }
     }
 
   .temperature {
         text-align: center;
+        font-weight: 100;
 
         .temp {
             font-size: 5em;
             margin: 0;
+            font-weight: 300;
         }
 
     .description {
@@ -67,6 +77,78 @@ body {
 
     .separator {
             margin: 0 6px;
+        }
+    }
+}
+
+.weather-locations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 0 10px 10px 0; 
+    width: 500px;
+    height: 600px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: none;
+
+    .more-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        height: 600px;
+
+        .button-more {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 30px;
+            background-color: #000;
+            border-radius: 13px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .extra-content {
+            display: none;
+            height: 40px;
+
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                input {
+                    width: 200px;
+                    height: 30px;
+                    border-radius: 5px 0 0 5px;
+                    padding: 10px;
+                    margin-bottom: 10px;
+                    outline: none;
+                    border: 0;
+                }
+
+                .search-button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 0 5px 5px 0;
+                    padding: 10px;
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                    background: #000;
+                    border: none;
+                }
+            }
         }
     }
 }
