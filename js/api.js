@@ -24,7 +24,7 @@ $(document).ready(function(){
        fetch(`${url}`)
          .then(response => response.json())
          .then(content => {
-//           console.log(content);
+         // console.log(content);
 
            const cityName = content.name;
            const cityCountry = content.sys.country;
@@ -41,7 +41,10 @@ $(document).ready(function(){
 
             const weatherConditions = {
                 'nublado': './assets/image/cloudy.gif',
+                'nuvens dispersas': './assets/image/cloudy.gif',
+                'algumas nuvens': './assets/image/cloudy.gif',
                 'chuva': './assets/image/rain.gif',
+                'chuva leve': './assets/image/rain.gif',
                 'céu limpo': './assets/image/sun.gif',
                 'tempestade': './assets/image/thunder.gif'
               };
@@ -50,4 +53,21 @@ $(document).ready(function(){
       
          });
      });
+
+     let endereco = "Av. Paulista, 1000 - Bela Vista, São Paulo - SP";
+     let apiURL = "https://maps.googleapis.com/maps/api/geocode/json";
+     let apiKey2 = "AIzaSyCv28xzlsM4zEpkBogk4zOnVc0v0uBGQdI"; // Substitua pela sua própria chave de API do Google Maps
+     let requestData = { address: endereco, key: apiKey2 };
+
+
+     $.ajax({
+      url: apiURL,
+      data: requestData,
+      type: "GET",
+      dataType: "json",
+      success: function(response) {
+    
+        console.log(response);
+      }
+    });
  });
