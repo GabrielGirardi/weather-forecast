@@ -6,8 +6,6 @@ $(document).ready(function(){
    const country = $('.country');
    const temp = $('.temp');
    const desc = $('.description');
-   const max = $('.max');
-   const min = $('.min');
    let iconWeather = $('.icon-weather');
    let wallpaper = $('body');
 
@@ -32,16 +30,13 @@ $(document).ready(function(){
            const cityCountry = content.sys.country;
            let cityTemp = content.main.temp;
            let cityTempDesc = content.weather[0].description;
-           let tempMax = content.main.temp_max;
-           let tempMin = content.main.temp_min;
            let icon = content.weather[0].icon;
+           let formatedTemp = Math.round(cityTemp);
 
            $(city).html(cityName);
            $(country).html(cityCountry);
-           $(temp).html(`${cityTemp}°C`);
+           $(temp).html(`${formatedTemp}°C`);
            $(desc).html(cityTempDesc);
-           $(max).html(`Máx ${tempMax}`);
-           $(min).html(`Min ${tempMin}`);
            $(iconWeather).attr('src', `http://openweathermap.org/img/w/${icon}.png`);
 
             const weatherConditions = {
@@ -52,8 +47,7 @@ $(document).ready(function(){
               };
               
               $(wallpaper).css('background-image', `url(${weatherConditions[cityTempDesc]})`);
-        
-
+      
          });
      });
  });
