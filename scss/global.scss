@@ -1,0 +1,55 @@
+// Colors
+
+:root {
+    --color-primary: #4c00ff;
+    --color-secondary: #000000;
+    --color-tertiary: #ffffff;
+    --color-background: #151737;
+    --color-dropfilter: rgba(11, 12, 29, 0.9);
+    --color-button: #232433;
+    --color-black: #000000;
+    --color-white: #ffffff;
+}
+
+
+.container {
+    margin: 0 auto;
+    max-width: 1240px;
+    max-height: 100vh;
+    
+    @media (max-width: 768px) {
+        max-width: 90%;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.light {
+    --color-background: #c3c3c3;
+    --color-dropfilter: rgba(84, 84, 84, 0.9);
+    --color-button: #232433;
+    --color-black: #000000;
+    --color-white: #ffffff;
+}
