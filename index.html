@@ -6,41 +6,63 @@
 		<title>Weather Forecast</title>
 		<link rel="icon" href="">
 		<link rel="stylesheet" type="text/css" href="./css/landing-page.css">
+		<link rel="stylesheet" type="text/css" href="./css/global.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script src="./js/api.js"></script>
 		<script src="./js/time.js"></script>
 		<script src="./js/main.js"></script>
   	</head>
 	<body>
-		<header>
-		
-		</header>
-		<section>
-			<div class="weather-widget">
-				<div class="location">
-					<h2 class="city">Cidade</h2>
-					<p class="country">País</p>
-				</div>
-				<div class="temperature">
-					<h1 class="temp">--°C</h1>
-					<p class="description">Descrição do tempo</p>
-					<div>
-						<img class="icon-weather" src="" alt="Condição Temporal" title="Condição Temporal" width="64" height="64"/>
+		<section class="flex center justify-center">
+			<div class="container">
+				<div class="weather-box">
+					<div class="top flex center justify-between">
+						<div class="more-info flex flex-column center justify-center">
+							<span></span>
+							<span></span>
+						</div>
+						<div class="location flex center justify-center">
+							<img src="./assets/icons/location.png" alt="Localização" width="20" height="18">
+							<p class="city">Localização</p>
+							<img class="arrow-down flex" src="./assets/icons/arrow-down.png" alt="arrow-down" width="12" height="12">
+						</div>
+						<div class="theme" data-theme="dark">
+							<div class="selector">
+								<div class="circle-selector">
+									<img src="./assets/icons/moon.png" alt="Tema" width="24" height="24">
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-			<div class="weather-locations">
-				<div class="date-and-time">
-					<span class="time"></span>
-					<span class="separator">-</span>
-					<span class="date"></span>
-				</div>
-				<div class="more-info">
-					<div class="button-more">+</div>
-					<div class="extra-content">
-						<div>
-							<input type="search" class="search" placeholder="Pesquisar cidade" />
-							<button class="search-button">🔎</button>
+					<div class="title-conditions">
+						<h3 class="today-report">Condição Atual</h3>
+					</div>
+					<div class="icon-condition flex flex-column justify-center center">
+						<div class="flex center justify-center">
+							<img class="weather-image" src="./assets/image/conditions/sun-clouds.png" alt="Condição temporal" width="128" height="128">
+						</div>
+						<h3 class="weather-conditions">
+							Condição
+						</h3>
+					</div>
+					<div class="conditions flex justify-center center">
+						<h1 class="temperature">-- ˚</h1>
+					</div>
+					<div class="extra flex justify-center center">
+						<div class="wind-speed flex flex-column justify-center center">
+							<img src="./assets/image/wind-speed.png" alt="Velocidade do ar" width="48" height="48"/>
+							<p class="measure">--km/h</p>
+							<span class="unity">Vento</span>
+						</div>
+						<div class="humidity flex flex-column justify-center center">
+							<img src="./assets/image/conditions/sun-clouds-rain.png" alt="Umidade" width="48" height="48"/>
+							<p class="measure">--%</p>
+							<span class="unity">Umidade</span>
+						</div>
+						<div class="clouds flex flex-column justify-center center">
+							<img src="./assets/image/conditions/clouds.png" alt="Nuvens no céu" width="48" height="48"/>
+							<p class="measure">--</p>
+							<span class="unity">Nuvens</span>
 						</div>
 					</div>
 				</div>
