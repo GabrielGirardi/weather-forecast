@@ -10,7 +10,7 @@ $(document).ready(function() {
   let cityname = localStorage.getItem('cidade');
   let statecode = 'SC';
   let countrycode = 'BR';
-  let getLocation = `http://api.openweathermap.org/geo/1.0/direct?q=${cityname},${statecode},${countrycode}&appid=${apiKey}`;
+  let getLocation = `https://api.openweathermap.org/geo/1.0/direct?q=${cityname},${statecode},${countrycode}&appid=${apiKey}`;
   let city = $('.city');
   let temp = $('.temperature');
   let conditions = $('.weather-conditions');
