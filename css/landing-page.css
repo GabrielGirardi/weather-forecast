@@ -9,6 +9,14 @@
   --color-button: #232433;
   --color-black: #000000;
   --color-white: #ffffff;
+  --invert: invert(1);
+}
+
+.light {
+  --color-background: #FBF6CC;
+  --color-dropfilter: #EEDEC0;
+  --color-button: #c9c59f;
+  --color-text: #000;
   --invert: invert(0);
 }
 
@@ -19,7 +27,7 @@
 }
 @media (max-width: 768px) {
   .container {
-    max-width: 90%;
+    width: 90%;
   }
 }
 
@@ -45,14 +53,6 @@
 
 .justify-around {
   justify-content: space-around;
-}
-
-.light {
-  --color-background: #FBF6CC;
-  --color-dropfilter: #EEDEC0;
-  --color-button: #232433;
-  --color-text: #000;
-  --invert: invert(1);
 }
 
 .loading {
@@ -95,10 +95,10 @@
 }
 
 body {
-  min-width: 100vh;
+  min-width: 100%;
   min-height: 100vh;
   background-color: var(--color-background);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s linear;
   font-family: "Poppins", sans-serif;
   color: var(--color-text);
 }
@@ -115,7 +115,7 @@ body section .weather-box {
   -webkit-backdrop-filter: blur(5px);
   border-radius: 13px;
   padding: 16px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s linear;
 }
 @media (max-width: 768px) {
   body section .weather-box {
@@ -144,6 +144,7 @@ body section .weather-box .top .more-info span:last-child {
   transform: translateX(-2px);
 }
 body section .weather-box .top .location {
+  cursor: pointer;
   gap: 10px;
 }
 body section .weather-box .top .location .arrow-down {

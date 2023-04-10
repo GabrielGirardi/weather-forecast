@@ -8,6 +8,14 @@
   --color-button: #232433;
   --color-black: #000000;
   --color-white: #ffffff;
+  --invert: invert(1);
+}
+
+.light {
+  --color-background: #FBF6CC;
+  --color-dropfilter: #EEDEC0;
+  --color-button: #c9c59f;
+  --color-text: #000;
   --invert: invert(0);
 }
 
@@ -18,7 +26,7 @@
 }
 @media (max-width: 768px) {
   .container {
-    max-width: 90%;
+    width: 90%;
   }
 }
 
@@ -44,14 +52,6 @@
 
 .justify-around {
   justify-content: space-around;
-}
-
-.light {
-  --color-background: #FBF6CC;
-  --color-dropfilter: #EEDEC0;
-  --color-button: #232433;
-  --color-text: #000;
-  --invert: invert(1);
 }
 
 .loading {
