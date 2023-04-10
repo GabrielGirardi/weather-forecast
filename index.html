@@ -4,23 +4,23 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Weather Forecast</title>
-		<link rel="icon" href="">
+		<link rel="icon" type="image/x-icon" href="./assets/image/conditions/clouds.png"/>
 		<link rel="stylesheet" type="text/css" href="./css/landing-page.css">
 		<link rel="stylesheet" type="text/css" href="./css/global.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv28xzlsM4zEpkBogk4zOnVc0v0uBGQdI"></script>
 		<script src="./js/api.js"></script>
 		<script src="./js/time.js"></script>
 		<script src="./js/main.js"></script>
+		<script src="./js/theme.js"></script>
+		<script src="./js/get-location.js"></script>
   	</head>
 	<body>
 		<section class="flex center justify-center">
 			<div class="container">
 				<div class="weather-box">
 					<div class="top flex center justify-between">
-						<div class="more-info flex flex-column center justify-center">
-							<span></span>
-							<span></span>
-						</div>
+				
 						<div class="location flex center justify-center">
 							<img src="./assets/icons/location.png" alt="Localização" width="20" height="18">
 							<p class="city">Localização</p>
@@ -35,8 +35,11 @@
 						</div>
 					</div>
 					<div class="title-conditions">
-						<h3 class="today-report">Condição Atual</h3>
+						<h3 class="today-report flex justify-center">Condição Atual</h3>
 					</div>
+					<div class="loading">
+						<div class="spinner"></div>
+					  </div>
 					<div class="icon-condition flex flex-column justify-center center">
 						<div class="flex center justify-center">
 							<img class="weather-image" src="./assets/image/conditions/sun-clouds.png" alt="Condição temporal" width="128" height="128">
