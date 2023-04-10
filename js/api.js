@@ -4,6 +4,10 @@ $(document).ready(function() {
     let cityname = prompt('Digite o nome da cidade');
     localStorage.setItem('cidade', cityname);
     location.reload();
+
+    if(localStorage.getItem('cidade') == '') {
+      localStorage.setItem('cidade', 'Rio do Sul');
+    }
   });
 
   const apiKey = 'c0694e269150453d93928541a7fbaf03';
