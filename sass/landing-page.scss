@@ -31,7 +31,7 @@ body {
             transition: all .2s linear;
 
             @media (max-width: 768px) {
-                width: 90%;
+                width: 98%;
             }
 
             .top {
@@ -156,6 +156,10 @@ body {
             .extra {
                 margin-top: 30px;;
                 gap: 60px;
+
+                @media (max-width: 768px) {
+                    gap: 30px;
+                }
             }
         }
     }

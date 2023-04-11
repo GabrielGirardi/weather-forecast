@@ -11,6 +11,9 @@
     --color-black: #000000;
     --color-white: #ffffff;
     --invert: invert(1); 
+    --background-search:  #00000066;
+    --search-button: rgba(29, 131, 221, 1);
+    --search-button-800: rgba(29, 131, 221, .8);
 }
 
 .light {
@@ -19,6 +22,7 @@
     --color-button: #c9c59f;
     --color-text: #000;
     --invert: invert(0); 
+    --background-search:  #ffffff66;
 }
 
 // definitions
@@ -29,7 +33,9 @@
     max-height: 100vh;
     
     @media (max-width: 768px) {
-        width: 90%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -80,12 +86,6 @@
         animation: spin 2s linear infinite;
       }
   }
-
-  .active {
-    display: flex;
-  }
-  
-
   
   @keyframes spin {
     0% {
@@ -94,4 +94,111 @@
     100% {
       transform: rotate(360deg);
     }
+  }
+
+  // search city
+
+  .search-city {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background-color: var(--background-search);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none;
+    user-select: none;
+
+    .search-title {
+       margin-bottom: 4px;
+
+       @media (max-width: 768px) {
+        text-align: center;
+       }
+    }
+
+    .search-bar {
+        border: 2px solid #3498db;
+        border-right: none;
+        border-radius: 13px 0 0 13px;
+        width: 220px;
+        height: 40px;
+        padding: 12px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        background: #e8e8e8;
+        width: 40px;
+        height: 40px;
+        border: 2px solid #3498db;
+        border-left: 1px solid #3498db;
+        border-radius: 0 13px 13px 0;
+        cursor: pointer;
+    }
+
+    .close {
+        padding: 6px;
+        border-radius: 13px;
+        background-color: var(--search-button);
+        cursor: pointer;
+        margin-top: 8px;
+        transition: all .1s linear;
+
+        &:hover {
+            background-color: var(--search-button-800);
+        }
+    }
+}
+
+
+// error box
+
+.error {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    .error-box {
+        padding: 12px;
+        border: 2px solid #f3f3f3;
+        background: #3498db;
+        border-radius: 13px;
+        width: 300px;
+        height: 200px;
+      }
+
+      .close {
+        width: 100%;
+        background: #f3f3f3;
+        border-radius: 13px;
+        text-align: center;
+        margin-top: 10px;
+        color: #000;
+        cursor: pointer;
+      }
+  }
+
+// classe para exibir
+
+
+.active {
+    display: flex;
   }

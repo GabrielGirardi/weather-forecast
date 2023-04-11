@@ -39,7 +39,28 @@
 					</div>
 					<div class="loading">
 						<div class="spinner"></div>
-					  </div>
+					</div>
+					<div class="search-city flex-column">
+						<h3 class="search-title">Digite o nome da cidade desejada</h3>
+						<div class="search-box flex justify-center center">
+							<input class="search-bar" type="text" value="" placeholder="Digite um nome de uma cidade"/>
+							<button class="search-btn flex justify-center center">
+								<img src="./assets/icons/location.png" alt="Buscar" width="24px" height="24px">
+							</button>
+						</div>
+						<div class="close">
+							Fechar
+						</div>
+					</div>
+					<div class="error">
+						<div class="error-box flex center justify-between flex-column">
+							<h3 class="error-title">ERRO</h3>
+							<p class="error-message">Não foi possível encontrar a cidade desejada, com isso, será retornado a localização padrão.</p>
+							<div class="close">
+								Fechar
+							</div>
+						</div>
+					</div>
 					<div class="icon-condition flex flex-column justify-center center">
 						<div class="flex center justify-center">
 							<img class="weather-image" src="./assets/image/conditions/sun-clouds.png" alt="Condição temporal" width="128" height="128">
