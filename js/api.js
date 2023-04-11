@@ -32,9 +32,7 @@ $(document).ready(function() {
       $('.search-city').removeClass('active');
     });
   });
-
- 
-
+  
 const apiKey = 'c0694e269150453d93928541a7fbaf03';
 let cityname = localStorage.getItem('cidade');
 let statecode = 'SC';
