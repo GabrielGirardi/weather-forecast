@@ -16,9 +16,9 @@
 }
 
 .light {
-  --color-background: #FBF6CC;
-  --color-dropfilter: #EEDEC0;
-  --color-button: #c9c59f;
+  --color-background: #E2EAFC;
+  --color-dropfilter: #D7E3FC;
+  --color-button: #B6CCFE;
   --color-text: #000;
   --invert: invert(0);
   --background-search: #ffffff66;
@@ -264,12 +264,9 @@ body section .weather-box .top .theme .circle-selector {
 body section .weather-box .top .theme .circle-selector.active {
   left: 26px;
 }
-body section .weather-box .title-conditions {
-  margin-top: 40px;
-}
 body section .weather-box .title-conditions h3 {
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 50px;
+  font-weight: 100;
 }
 body section .weather-box .icon-condition {
   width: 100%;
