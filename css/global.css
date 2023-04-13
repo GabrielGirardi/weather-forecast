@@ -15,9 +15,9 @@
 }
 
 .light {
-  --color-background: #FBF6CC;
-  --color-dropfilter: #EEDEC0;
-  --color-button: #c9c59f;
+  --color-background: #E2EAFC;
+  --color-dropfilter: #D7E3FC;
+  --color-button: #B6CCFE;
   --color-text: #000;
   --invert: invert(0);
   --background-search: #ffffff66;

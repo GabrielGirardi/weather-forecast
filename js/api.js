@@ -50,8 +50,6 @@ $(document).ready(function() {
             cityname = localStorage.setItem('cidade', catchLocation);
             location.reload();
         }
-
-        console.log(validation);
       });
     } 
   }
@@ -59,10 +57,10 @@ $(document).ready(function() {
   getUserLocation();
 
   $(document).ready(
-  
-  fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityname},BR&appid=${apiKey}`)
-  .then(response => response.json())
-  .then(location => { 
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityname},BR&appid=${apiKey}`)
+    .then(response => response.json())
+    .then(location => { 
+    console.log('asdasd')
     if (!location[0] || location[0].lat === undefined || location[0].lon === undefined) {
       let cityname = localStorage.getItem('backup');  
 

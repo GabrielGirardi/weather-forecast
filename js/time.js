@@ -1,14 +1,23 @@
 $(document).ready(function(){
-    let nowDate = new Date();
-    let day = nowDate.getDate();
-    let month = nowDate.getMonth() + 1;
-    let year = nowDate.getFullYear();
-
-    let hour = nowDate.getHours();
-    let minute = nowDate.getMinutes();
-    let date = day + "/" + month + "/" + year;
-    let time = hour + "h:" + minute + "min";
-
-    $('.date').html(date);
-    $('.time').html(time);
+    function formatTime(time) {
+        return time < 10 ? `0${time}` : time;
+    }
+        
+    // Função para atualizar a hora
+    function updateTime() {
+        const now = new Date();
+        const hours = formatTime(now.getHours());
+        const minutes = formatTime(now.getMinutes());
+        const timeDisplay = `${hours}:${minutes}`;
+        $('.title-conditions .today-report').html(timeDisplay);
+    }
+        
+    // Chama a função updateTime a cada vez que o minuto muda
+    updateTime();
+    setInterval(() => {
+        const now = new Date();
+        if (now.getSeconds() === 0) {
+            updateTime();
+        }
+    }, 1000);
 });
