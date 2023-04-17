@@ -3,6 +3,41 @@ $(document).ready(function() {
   let cityname = localStorage.getItem('cidade');
   let loader = $('.loading');
 
+  if(localStorage.getItem('validation')) {
+    $('.welcome').removeClass('active');
+    fetchLocation()
+  };
+
+  if(localStorage.getItem('backup')) {
+    $('.last-search').addClass('active');
+
+    $('.last-search').on('click', function() {
+      localStorage.setItem('cidade', localStorage.getItem('backup'));
+      window.location.reload();
+    });
+  } else {
+    $('.last-search').hide();
+  }
+
+  if ($('.welcome').hasClass('active')){
+    const firstSearch = function() {
+      const cityName = $('.search-bar.welcome-bar').val();
+      if (cityName) {
+        localStorage.setItem('cidade', cityName);
+        location.reload();
+        localStorage.setItem('validation', true);
+      };
+    };
+
+    $('.search-bar').change(firstSearch);
+
+    $('.search-bar').keypress(function(event) {
+      if (event.keyCode === 13) { 
+        firstSearch();
+      };
+    });
+  };
+
   $('.location').on('click', function() {
     $('.search-city').addClass('active');
 
@@ -11,7 +46,7 @@ $(document).ready(function() {
       if (cityName) {
         localStorage.setItem('cidade', cityName);
         location.reload();
-      }
+      };
     };
 
     $('.search-bar').change(handleSearch);
@@ -19,7 +54,7 @@ $(document).ready(function() {
     $('.search-bar').keypress(function(event) {
       if (event.keyCode === 13) { 
         handleSearch();
-      }
+      };
     });
 
     $('.close').on('click', function(){
@@ -27,47 +62,30 @@ $(document).ready(function() {
     });
   });
 
-  function getUserLocation(){
-    if (navigator.geolocation) {
-      loader.addClass('active');
-      $('.error').hide();
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-      alert("Geolocation is not supported by this browser.");
-    }
-
-    function showPosition(position) {
-      let lat = position.coords.latitude;
-      let lon = position.coords.longitude;
-
-      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=pt_br&units=metric&appid=${apiKey}`)
-      .then(response => response.json())
-      .then(content => {
-        let catchLocation = content.name;
-        
-        if (navigator.geolocation && cityname === null) {
-            console.log(catchLocation);
-            cityname = localStorage.setItem('cidade', catchLocation);
-            location.reload();
-        }
-      });
-    } 
-  }
-
-  getUserLocation();
-
-  $(document).ready(
+  function fetchLocation(){
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityname},BR&appid=${apiKey}`)
     .then(response => response.json())
     .then(location => { 
     console.log('asdasd')
     if (!location[0] || location[0].lat === undefined || location[0].lon === undefined) {
-      let cityname = localStorage.getItem('backup');  
-
       localStorage.setItem('cidade', cityname);
       $('.error').addClass('active');
-      $('.error .close').on('click', function(){
-        window.location.reload();
+
+      const errorSearch = function() {
+        const cityName = $('.search-bar.error-bar').val();
+
+        if (cityName) {
+          localStorage.setItem('cidade', cityName);
+          window.location.reload();
+        }
+      };
+  
+      $('.search-bar').change(errorSearch);
+  
+      $('.search-bar').keypress(function(event) {
+        if (event.keyCode === 13) { 
+          errorSearch();
+        }
       });
       return;
     }
@@ -110,6 +128,6 @@ $(document).ready(function() {
       localStorage.setItem('backup', cityname);
       loader.removeClass('active');
     });
-  })
-  );
+  });
+  };
 });
