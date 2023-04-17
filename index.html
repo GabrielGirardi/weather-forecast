@@ -11,16 +11,13 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv28xzlsM4zEpkBogk4zOnVc0v0uBGQdI"></script>
 		<script src="./js/api.js"></script>
 		<script src="./js/time.js"></script>
-		<script src="./js/main.js"></script>
 		<script src="./js/theme.js"></script>
-		<script src="./js/get-location.js"></script>
   	</head>
 	<body>
 		<section class="flex center justify-center">
 			<div class="container">
 				<div class="weather-box">
 					<div class="top flex center justify-between">
-				
 						<div class="location flex center justify-center">
 							<img src="./assets/icons/location.png" alt="Localização" width="20" height="18">
 							<p class="city">Localização</p>
@@ -29,7 +26,7 @@
 						<div class="theme" data-theme="dark">
 							<div class="selector">
 								<div class="circle-selector">
-									<img src="./assets/icons/moon.png" alt="Tema" width="24" height="24">
+									<img src="./assets/icons/sun.png" alt="Tema" width="24" height="24">
 								</div>
 							</div>
 						</div>
@@ -43,22 +40,50 @@
 					<div class="search-city flex-column">
 						<h3 class="search-title">Digite o nome da cidade desejada</h3>
 						<div class="search-box flex justify-center center">
-							<input class="search-bar" type="text" value="" placeholder="Digite um nome de uma cidade"/>
+							<input class="search-bar" type="text" value="" placeholder="Rio do Sul"/>
 							<button class="search-btn flex justify-center center">
-								<img src="./assets/icons/location.png" alt="Buscar" width="24px" height="24px">
+								<img src="./assets/icons/arrow-down.png" alt="Buscar" width="24px" height="24px">
 							</button>
 						</div>
-						<div class="close">
-							Fechar
+						<div class="close flex justify-center center">
+							Cancelar
+						</div>
+					</div>
+					<div class="welcome active">
+						<div class="welcome-box flex center flex-column">
+							<div class="buttons flex center">
+								<div class="red"></div>
+								<div class="yellow"></div>
+								<div class="green"></div>
+							</div>
+							<div class="content flex center flex-column">
+								<h3 class="welcome-title">Vamos começar</h3>
+								<p class="welcome-message">Aqui você pode encontrar informações úteis sobre a cidade desejada, tal como a temperatura atual, velocidade do vento ou até mesmo a porcentagem de nuvens visíveis no céu</p>
+								<img src="./assets/image/conditions/sun.png" alt="Get start" width="86" height="86">
+								<div class="search-box flex justify-center center flex-column">
+									<span class="get-start">Para começar, tente digitar o nome de uma cidade</span>
+									<input class="search-bar welcome-bar" type="text" value="" placeholder="Digite um nome de uma cidade"/>
+									<button class="search-btn flex justify-center center">
+										<span>Buscar</span>
+										<img src="./assets/icons/arrow-down.png" alt="Buscar" width="18px" height="18px">
+									</button>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="error">
 						<div class="error-box flex center justify-between flex-column">
-							<h3 class="error-title">ERRO</h3>
-							<p class="error-message">Não foi possível encontrar a cidade desejada, com isso, será retornado a localização padrão.</p>
-							<div class="close">
-								Fechar
-							</div>
+							<h3 class="error-title">Opssss...</h3>
+							<p class="error-message">Não foi possível encontrar a cidade desejada, tente novamente...</p>
+							<input class="search-bar error-bar" type="text" value="" placeholder="Digite um nome de uma cidade"/>
+							<button class="search-btn flex justify-center center">
+								<span>Buscar</span>
+								<img src="./assets/icons/arrow-down.png" alt="Buscar" width="18px" height="18px">
+							</button>
+							<button class="last-search flex justify-center center">
+								<span>Última pesquisa</span>
+								<img src="./assets/icons/arrow-down.png" alt="Última pesquisa" width="18" height="18">
+							</button>
 						</div>
 					</div>
 					<div class="icon-condition flex flex-column justify-center center">

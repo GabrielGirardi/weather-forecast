@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap');
-@import './global.scss';
 
 * {
     padding: 0;
@@ -111,6 +110,7 @@ body {
                     border-radius: 23px;
 
                     img {
+                        animation: weather 2s linear infinite;
                         z-index: 1;
                         margin: 0 auto;
                     }
