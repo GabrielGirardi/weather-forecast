@@ -10,7 +10,9 @@ body {
     min-width: 100%;
     min-height: 100vh;
     background-color: var(--color-background);
-    transition: all .2s linear;
+    background-image: radial-gradient(#444cf7 0.55px, var(--color-background) 0.55px);
+    background-size: 11px 11px;
+    transition: all .4s linear;
     font-family: 'Poppins', sans-serif;
     color: var(--color-text);
 
@@ -19,18 +21,24 @@ body {
         max-width: 100vh;
         min-height: 100vh;
 
+        @media (max-width: 768px) { 
+            padding: 10px;
+        }
+
         .weather-box {
             width: 800px;
             height: 500px;
             background: var(--color-dropfilter);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 13.5px );
+            -webkit-backdrop-filter: blur( 13.5px );
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
             border-radius: 13px;
             padding: 16px;
             transition: all .2s linear;
 
             @media (max-width: 768px) {
-                width: 98%;
+                width: 100%;
             }
 
             .top {
@@ -61,7 +69,7 @@ body {
                     cursor: pointer;
                     gap: 10px;
 
-                    .arrow-down {
+                    .arrow-down, img {
                         filter: var(--invert);
                     }
 
@@ -114,31 +122,6 @@ body {
                         z-index: 1;
                         margin: 0 auto;
                     }
-
-
-                    &:after {
-                        position: absolute;
-                        content:"";
-                        top: 0px;
-                        left: 10px;
-                        width: 170px;
-                        height: 120px;
-                        border-radius: 50%;
-                        background: linear-gradient(90deg, var(--color-dropfilter) 0%, rgba(0, 0, 255, 0.4) 50%, var(--color-dropfilter) 100%);
-                        filter: blur(20px);
-                    }
-
-                    &:before {
-                        position: absolute;
-                        content:"";
-                        top: 0;
-                        right: 10px;
-                        width: 170px;
-                        height: 120px;
-                        border-radius: 50%;
-                        background: linear-gradient(90deg, var(--color-dropfilter) 0%, rgba(255, 255, 0, 0.3) 50%, var(--color-dropfilter) 100%);
-                        filter: blur(20px);
-                    }
                 }
 
                 h3 {
@@ -156,7 +139,54 @@ body {
                 gap: 60px;
 
                 @media (max-width: 768px) {
-                    gap: 30px;
+                    gap: 0;
+                }
+
+
+                img {
+                    border-radius: 50%;
+
+                    @media (max-width: 768px) {
+                        width: 40px;
+                        height: 40px;
+                        background: #fff;
+                        padding: 4px;
+                    }
+                }
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background: #fff;
+                    width: 100px;
+                    height: 100px;
+                    padding: 20px;
+                    color: #000;
+                    font-size: 13px;
+
+                    @media (max-width: 768px){
+                       font-size: 12px;
+                       background: transparent;
+                       width: 80px;
+                       width: 80px;
+                       padding: 0;
+                    }
+
+                    span {
+                        @media (max-width: 768px){
+                            font-weight: bold;
+                            color: var(--color-text);
+                        }
+                    }
+
+                    p {
+                        @media (max-width: 768px){
+                            font-weight: 300;
+                            color: var(--color-text);
+                        }
+                    }
                 }
             }
         }

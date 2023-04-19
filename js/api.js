@@ -66,7 +66,6 @@ $(document).ready(function() {
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityname},BR&appid=${apiKey}`)
     .then(response => response.json())
     .then(location => { 
-    console.log('asdasd')
     if (!location[0] || location[0].lat === undefined || location[0].lon === undefined) {
       localStorage.setItem('cidade', cityname);
       $('.error').addClass('active');
@@ -104,7 +103,8 @@ $(document).ready(function() {
       let cityTempDesc = content.weather[0].description;
       let cityHumidity = content.main.humidity;
       let cityWindSpeed = Math.round(content.wind.speed);
-      let cityClouds = content.clouds.all;       
+      let cityClouds = content.clouds.all;   
+      let feelLike = Math.round(content.main.feels_like);    
       let weatherConditions = {
           'nublado': './assets/image/conditions/clouds.png',
           'nuvens dispersas': './assets/image/conditions/sun-clouds.png',
@@ -123,6 +123,7 @@ $(document).ready(function() {
       $('.wind-speed .measure').html(cityWindSpeed + ' km/h');
       $('.humidity .measure').html(cityHumidity + '%');
       $('.clouds .measure').html(cityClouds + '%');
+      $('.rain .measure').html(feelLike + ' °C');
       $('.weather-image').attr('src', weatherConditions[cityTempDesc]);
 
       localStorage.setItem('backup', cityname);

@@ -19,14 +19,14 @@
 				<div class="weather-box">
 					<div class="top flex center justify-between">
 						<div class="location flex center justify-center">
-							<img src="./assets/icons/location.png" alt="Localização" width="20" height="18">
+							<img src="./assets/icons/location.svg" alt="Localização" width="20" height="18" draggable="false"/>
 							<p class="city">Localização</p>
-							<img class="arrow-down flex" src="./assets/icons/arrow-down.png" alt="arrow-down" width="12" height="12">
+							<img class="arrow-down flex" src="./assets/icons/arrow-down.png" alt="arrow-down" width="12" height="12" draggable="false"/>
 						</div>
 						<div class="theme" data-theme="dark">
 							<div class="selector">
 								<div class="circle-selector">
-									<img src="./assets/icons/sun.png" alt="Tema" width="24" height="24">
+									<img src="./assets/icons/sun.png" alt="Tema" width="24" height="24" draggable="false"/>
 								</div>
 							</div>
 						</div>
@@ -35,18 +35,27 @@
 						<h3 class="today-report flex justify-center"></h3>
 					</div>
 					<div class="loading">
-						<div class="spinner"></div>
+						<div class="rocket-loader">
+							<div class="rocket">
+							  <div class="rocket-extras"></div>
+							  <div class="jet"><span></span></div>
+							</div>
+						  </div>
 					</div>
 					<div class="search-city flex-column">
-						<h3 class="search-title">Digite o nome da cidade desejada</h3>
-						<div class="search-box flex justify-center center">
-							<input class="search-bar" type="text" value="" placeholder="Rio do Sul"/>
-							<button class="search-btn flex justify-center center">
-								<img src="./assets/icons/arrow-down.png" alt="Buscar" width="24px" height="24px">
-							</button>
-						</div>
-						<div class="close flex justify-center center">
-							Cancelar
+						<div class=" search-content flex flex-column justify-center center">
+							<h3 class="search-title">Digite o nome da cidade desejada</h3>
+							<img class="weather-data" src="./assets/icons/77075-location-weather-radar.gif" alt="Find weather" width="230" height="230" draggable="false"/>
+			
+							<div class="search-box flex justify-center center">
+								<input class="search-bar" type="text" value="" placeholder="Rio do Sul..."/>
+								<button class="search-btn flex justify-center center">
+									<img src="./assets/icons/magnifyingglass.svg" alt="Buscar" width="16px" height="16px" draggable="false"/>
+								</button>
+							</div>
+							<div class="close flex justify-center center">
+								Cancelar
+							</div>
 						</div>
 					</div>
 					<div class="welcome active">
@@ -59,36 +68,37 @@
 							<div class="content flex center flex-column">
 								<h3 class="welcome-title">Vamos começar</h3>
 								<p class="welcome-message">Aqui você pode encontrar informações úteis sobre a cidade desejada, tal como a temperatura atual, velocidade do vento ou até mesmo a porcentagem de nuvens visíveis no céu</p>
-								<img src="./assets/image/conditions/sun.png" alt="Get start" width="86" height="86">
+								<img src="./assets/icons/icons8-sun.gif" alt="Get start" width="82" height="82" draggable="false"/>
 								<div class="search-box flex justify-center center flex-column">
 									<span class="get-start">Para começar, tente digitar o nome de uma cidade</span>
-									<input class="search-bar welcome-bar" type="text" value="" placeholder="Digite um nome de uma cidade"/>
+									<input class="search-bar welcome-bar" type="text" value="" placeholder="Digite um nome de uma cidade..."/>
 									<button class="search-btn flex justify-center center">
 										<span>Buscar</span>
-										<img src="./assets/icons/arrow-down.png" alt="Buscar" width="18px" height="18px">
+										<img src="./assets/icons/arrow-down.png" alt="Buscar" width="18px" height="18px" draggable="false"/>
 									</button>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="error">
-						<div class="error-box flex center justify-between flex-column">
+						<div class="error-box flex center justify-center flex-column">
 							<h3 class="error-title">Opssss...</h3>
+							<img src="./assets/icons/9195-error.gif" alt="Error" width="156" height="156" draggable="false"/>
 							<p class="error-message">Não foi possível encontrar a cidade desejada, tente novamente...</p>
-							<input class="search-bar error-bar" type="text" value="" placeholder="Digite um nome de uma cidade"/>
+							<input class="search-bar error-bar" type="text" value="" placeholder="Digite um nome de uma cidade..."/>
 							<button class="search-btn flex justify-center center">
 								<span>Buscar</span>
-								<img src="./assets/icons/arrow-down.png" alt="Buscar" width="18px" height="18px">
+								<img class="error-cat" src="./assets/icons/arrow-down.png" alt="Buscar" width="18px" height="18px" draggable="false"/>
 							</button>
 							<button class="last-search flex justify-center center">
 								<span>Última pesquisa</span>
-								<img src="./assets/icons/arrow-down.png" alt="Última pesquisa" width="18" height="18">
+								<img src="./assets/icons/arrow-down.png" alt="Última pesquisa" width="18" height="18" draggable="false"/>
 							</button>
 						</div>
 					</div>
 					<div class="icon-condition flex flex-column justify-center center">
 						<div class="flex center justify-center">
-							<img class="weather-image" src="./assets/image/conditions/sun-clouds.png" alt="Condição temporal" width="128" height="128">
+							<img class="weather-image" src="./assets/image/conditions/sun-clouds.png" alt="Condição temporal" width="128" height="128" draggable="false"/>
 						</div>
 						<h3 class="weather-conditions">
 							Condição
@@ -99,19 +109,24 @@
 					</div>
 					<div class="extra flex justify-center center">
 						<div class="wind-speed flex flex-column justify-center center">
-							<img src="./assets/image/wind-speed.png" alt="Velocidade do ar" width="48" height="48"/>
+							<img src="./assets/icons/wind.gif" alt="Velocidade do ar" width="32" height="32"/>
 							<p class="measure">--km/h</p>
 							<span class="unity">Vento</span>
 						</div>
 						<div class="humidity flex flex-column justify-center center">
-							<img src="./assets/image/conditions/sun-clouds-rain.png" alt="Umidade" width="48" height="48"/>
+							<img src="./assets/icons/water.png" alt="Umidade" width="32" height="32"/>
 							<p class="measure">--%</p>
 							<span class="unity">Umidade</span>
 						</div>
 						<div class="clouds flex flex-column justify-center center">
-							<img src="./assets/image/conditions/clouds.png" alt="Nuvens no céu" width="48" height="48"/>
+							<img src="./assets/icons/clouds.gif" alt="Nuvens no céu" width="32" height="32"/>
 							<p class="measure">--</p>
 							<span class="unity">Nuvens</span>
+						</div>
+						<div class="rain flex flex-column justify-center center">
+							<img src="./assets/icons/barometer.gif" alt="Nuvens no céu" width="32" height="32"/>
+							<p class="measure">-- ˚C</p>
+							<span class="unity">Sensação</span>
 						</div>
 					</div>
 				</div>
